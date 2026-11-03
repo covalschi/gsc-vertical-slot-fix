@@ -1,0 +1,16 @@
+# private signing key: never commit
+*.biprivatekey
+
+# build output
+@*/
+*.pbo
+*.bisign
+
+# junk
+*.log
+Thumbs.db
+desktop.ini
+
+# machine half of the dayz-mcp profile and its working directory
+dayz-mcp.local.toml
+.dayz-mcp/

@@ -1,0 +1,11 @@
+FrameWidgetClass GVSF_SlotStrip {
+ clipchildren 0
+ ignorepointer 0
+ position 0 0
+ size 198 528
+ hexactpos 1
+ vexactpos 1
+ hexactsize 1
+ vexactsize 1
+ priority 5
+}

@@ -1,0 +1,15 @@
+# Portable half of the dayz-agentic-modding-mcp profile.
+# Machine paths live in dayz-mcp.local.toml, which is not committed.
+
+[project]
+name = "gsc-vertical-slot-fix"
+
+[build]
+mods = ["GSC_Vertical_Slot_Fix"]
+
+[expect]
+# The mod prints no readiness line, so a verdict judges by the absence of errors alone.
+ready_line   = ""
+max_warnings = 1000
+forbid       = ["Can't compile"]
+error_regex  = ["SCRIPT\\s+\\(E\\).*GVSF_"]
