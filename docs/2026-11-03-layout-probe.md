@@ -61,6 +61,23 @@ has to be scrolled, and a backpack in hands squeezes the character to a sliver.
 The release build differs from the build these runs used by one `#ifdef DIAG_DEVELOPER` around a log line;
 `client_compile_check` passed on it.
 
+## With OpenZone Storage
+
+OpenZone Storage reopens the same classes for its own gestures (`PlayerContainer.OnDropReceivedFromGhostArea`,
+`PlayerContainer.MouseClick`, `SlotsIcon`, `Inventory`). Diag 1920x1080, 19 slots, a medium box opened with its
+proxy in the vicinity, no script errors on either side:
+
+| Check | Result |
+|---|---|
+| Worn rifle from a moved tile to the box's weapon rack | written to the box |
+| Rifle from the rack onto an occupied moved tile | exchanged with the rifle there |
+| Alt+click on a moved tile | the knife went into the box's grid |
+| Knife from the box's grid to its empty moved tile | back in the slot, grid empty |
+| The box's search bar | shades every other tile, exactly on its new rectangle |
+| Inventory closed and opened again with the session live | strip in the same place |
+
+Not covered there: the personal stash, a box opened by its action rather than by a stand verb, a retail client.
+
 ## Keyboard and gamepad
 
 `Inventory.Update` moves the grid cursor only under `#ifdef PLATFORM_CONSOLE`, so a PC build has no such
@@ -68,7 +85,7 @@ navigation to break. Checked on a live client: the D-pad moves nothing among the
 
 ## Not tested
 
-- Other mods that reopen `PlayerContainer` or swap the inventory layouts.
+- Other mods that reopen `PlayerContainer` or swap the inventory layouts, OpenZone Storage aside.
 - More than 32 slots (a fifth column).
 - A later version of the original. The patch depends on the names `S2_CharacterView`,
   `S2_ColumnCentreRecessTop`, `S2_ColumnCentreRecessLow` and `ScrollerSlotsContent`, and on the addon name
