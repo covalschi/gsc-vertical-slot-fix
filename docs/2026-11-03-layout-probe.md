@@ -74,8 +74,3 @@ navigation to break. Checked on a live client: the D-pad moves nothing among the
   `S2_ColumnCentreRecessTop`, `S2_ColumnCentreRecessLow` and `ScrollerSlotsContent`, and on the addon name
   `GSC_StalkerInventory_Scripts` in `requiredAddons`. A missing widget leaves the layout alone by the code's
   guard, which no run has exercised; a renamed addon stops the game with a blocking dialog.
-
-## Left on the stand
-
-`E:\dayzmod\testserver\serverDZ_ozi_poc.cfg` with its world `storage_77` in `testserver\mpmissions`, and
-`serverDZ_gvsf_retail.cfg` with its world `storage_78` in `dayzserver-retail\mpmissions`.
